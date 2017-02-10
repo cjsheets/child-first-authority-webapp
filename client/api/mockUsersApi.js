@@ -56,7 +56,7 @@ class UsersApi {
           //The server would generate ids and watchHref's for new users in a real app.
           //Cloning so copy returned is passed by value rather than by reference.
           user.id = generateId(user);
-          user.watchHref = `http://www.pluralsight.com/users/${user.id}`;
+          user.watchHref = '';
           users.push(user);
         }
 

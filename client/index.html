@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <title>App</title>
+    <link rel="stylesheet" href="client/app.css">
+    <script src="https://cdn.ravenjs.com/3.10.0/raven.min.js" crossorigin="anonymous"></script>
+    <script type="javascript">
+      Raven.config('https://388f3b4cd97e4ce88c1d9b660ca3e81e@sentry.io/137675').install()
+    </script>
   </head>
   <body>
     <div id="app"></div>
