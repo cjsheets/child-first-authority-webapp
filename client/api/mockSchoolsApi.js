@@ -5,161 +5,161 @@ import delay from './delay';
 // All calls return promises.
 const schools = [
   {
-    "_id" : "589bb5ad5d4c3d03304f49c1",
-    "name" : "School A",
-    "active" : true,
-    "triggers" : [ 
+    _id      : '589bb5ad5d4c3d03304f49c1',
+    name     : 'School A',
+    active   : true,
+    triggers : [
       {
-        "absences" : 3,
-        "tier" : 1,
-        "type" : "Phone Call"
+        absences : 3,
+        tier     : 1,
+        type     : 'Phone Call'
       }, {
-        "absences" : 4,
-        "tier" : 1,
-        "type" : "Letter Sent"
+        absences : 4,
+        tier     : 1,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 5,
-        "tier" : 1,
-        "type" : "Home Visit"
+        absences : 5,
+        tier     : 1,
+        type     : 'Home Visit'
       }, {
-        "absences" : 6,
-        "tier" : 2,
-        "type" : "Phone Call"
+        absences : 6,
+        tier     : 2,
+        type     : 'Phone Call'
       }, {
-        "absences" : 7,
-        "tier" : 2,
-        "type" : "Letter Sent"
+        absences : 7,
+        tier     : 2,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 8,
-        "tier" : 2,
-        "type" : "Home Visit"
+        absences : 8,
+        tier     : 2,
+        type     : 'Home Visit'
       }, {
-        "absences" : 9,
-        "tier" : 3,
-        "type" : "Phone Call"
+        absences : 9,
+        tier     : 3,
+        type     : 'Phone Call'
       }, {
-        "absences" : 10,
-        "tier" : 3,
-        "type" : "Letter Sent"
+        absences : 10,
+        tier     : 3,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 11,
-        "tier" : 3,
-        "type" : "Home Visit"
+        absences : 11,
+        tier     : 3,
+        type     : 'Home Visit'
       }, {
-        "absences" : 12,
-        "tier" : 1,
-        "type" : "SST Referral"
+        absences : 12,
+        tier     : 1,
+        type     : 'SST Referral'
       }, {
-        "absences" : 15,
-        "tier" : 1,
-        "type" : "Court Referral"
-        }
+        absences : 15,
+        tier     : 1,
+        type     : 'Court Referral'
+      }
     ],
-    "__v" : 0
+    __v : 0
   }, {
-    "_id" : ObjectId("589bb5ad5d4c3d03304f49c2"),
-    "name" : "School B",
-    "active" : true,
-    "triggers" : [ 
-        {
-        "absences" : 3,
-        "tier" : 1,
-        "type" : "Phone Call"
+    _id      : ObjectId('589bb5ad5d4c3d03304f49c2'),
+    name     : 'School B',
+    active   : true,
+    triggers : [
+      {
+        absences : 3,
+        tier     : 1,
+        type     : 'Phone Call'
       }, {
-        "absences" : 4,
-        "tier" : 1,
-        "type" : "Letter Sent"
+        absences : 4,
+        tier     : 1,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 5,
-        "tier" : 1,
-        "type" : "Home Visit"
+        absences : 5,
+        tier     : 1,
+        type     : 'Home Visit'
       }, {
-        "absences" : 6,
-        "tier" : 2,
-        "type" : "Phone Call"
+        absences : 6,
+        tier     : 2,
+        type     : 'Phone Call'
       }, {
-        "absences" : 7,
-        "tier" : 2,
-        "type" : "Letter Sent"
+        absences : 7,
+        tier     : 2,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 8,
-        "tier" : 2,
-        "type" : "Home Visit"
+        absences : 8,
+        tier     : 2,
+        type     : 'Home Visit'
       }, {
-        "absences" : 9,
-        "tier" : 3,
-        "type" : "Phone Call"
+        absences : 9,
+        tier     : 3,
+        type     : 'Phone Call'
       }, {
-        "absences" : 10,
-        "tier" : 3,
-        "type" : "Letter Sent"
+        absences : 10,
+        tier     : 3,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 11,
-        "tier" : 3,
-        "type" : "Home Visit"
+        absences : 11,
+        tier     : 3,
+        type     : 'Home Visit'
       }, {
-        "absences" : 12,
-        "tier" : 1,
-        "type" : "SST Referral"
+        absences : 12,
+        tier     : 1,
+        type     : 'SST Referral'
       }, {
-        "absences" : 15,
-        "tier" : 1,
-        "type" : "Court Referral"
-        }
+        absences : 15,
+        tier     : 1,
+        type     : 'Court Referral'
+      }
     ],
-    "__v" : 0
+    __v : 0
   }, {
-    "_id" : ObjectId("589bb5ad5d4c3d03304f49c3"),
-    "name" : "School C",
-    "active" : true,
-    "triggers" : [ 
-        {
-        "absences" : 3,
-        "tier" : 1,
-        "type" : "Phone Call"
+    _id      : ObjectId('589bb5ad5d4c3d03304f49c3'),
+    name     : 'School C',
+    active   : true,
+    triggers : [
+      {
+        absences : 3,
+        tier     : 1,
+        type     : 'Phone Call'
       }, {
-        "absences" : 4,
-        "tier" : 1,
-        "type" : "Letter Sent"
+        absences : 4,
+        tier     : 1,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 5,
-        "tier" : 1,
-        "type" : "Home Visit"
+        absences : 5,
+        tier     : 1,
+        type     : 'Home Visit'
       }, {
-        "absences" : 6,
-        "tier" : 2,
-        "type" : "Phone Call"
+        absences : 6,
+        tier     : 2,
+        type     : 'Phone Call'
       }, {
-        "absences" : 7,
-        "tier" : 2,
-        "type" : "Letter Sent"
+        absences : 7,
+        tier     : 2,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 8,
-        "tier" : 2,
-        "type" : "Home Visit"
+        absences : 8,
+        tier     : 2,
+        type     : 'Home Visit'
       }, {
-        "absences" : 9,
-        "tier" : 3,
-        "type" : "Phone Call"
+        absences : 9,
+        tier     : 3,
+        type     : 'Phone Call'
       }, {
-        "absences" : 10,
-        "tier" : 3,
-        "type" : "Letter Sent"
+        absences : 10,
+        tier     : 3,
+        type     : 'Letter Sent'
       }, {
-        "absences" : 11,
-        "tier" : 3,
-        "type" : "Home Visit"
+        absences : 11,
+        tier     : 3,
+        type     : 'Home Visit'
       }, {
-        "absences" : 12,
-        "tier" : 1,
-        "type" : "SST Referral"
+        absences : 12,
+        tier     : 1,
+        type     : 'SST Referral'
       }, {
-        "absences" : 15,
-        "tier" : 1,
-        "type" : "Court Referral"
-        }
+        absences : 15,
+        tier     : 1,
+        type     : 'Court Referral'
+      }
     ],
-    "__v" : 0
+    __v : 0
   }
 ];
 
@@ -168,13 +168,11 @@ function replaceAll(str, find, replace) {
 }
 
 //This would be performed on the server in a real app. Just stubbing in.
-const generateId = (school) => {
-  return replaceAll(school.title, ' ', '-');
-};
+const generateId = school => replaceAll(school.title, ' ', '-');
 
 class SchoolsApi {
   static getAllSchools() {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       setTimeout(() => {
         resolve(Object.assign([], schools));
       }, delay);
@@ -186,11 +184,11 @@ class SchoolsApi {
       setTimeout(() => {
         // Simulate server-side validation
         const minSchoolTitleLength = 1;
-        if (school.title.length < minSchoolTitleLength) {
+        if(school.title.length < minSchoolTitleLength) {
           reject(`Title must be at least ${minSchoolTitleLength} characters.`);
         }
 
-        if (school.id) {
+        if(school.id) {
           const existingSchoolIndex = schools.findIndex(a => a.id == school.id);
           schools.splice(existingSchoolIndex, 1, school);
         } else {
@@ -208,7 +206,7 @@ class SchoolsApi {
   }
 
   static deleteSchool(schoolId) {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       setTimeout(() => {
         const indexOfSchoolToDelete = schools.findIndex(school => {
           school.schoolId == schoolId;

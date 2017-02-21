@@ -5,19 +5,19 @@ import delay from './delay';
 // All calls return promises.
 const users = [
   {
-    "_id" : "589bb5ad5d4c3d03304f49c0",
-    "provider" : "local",
-    "name" : "Admin",
-    "email" : "admin@admin.com",
-    "role" : "admin",
-    "__v" : 0
+    _id      : '589bb5ad5d4c3d03304f49c0',
+    provider : 'local',
+    name     : 'Admin',
+    email    : 'admin@admin.com',
+    role     : 'admin',
+    __v      : 0
   }, {
-    "_id" : "589bb5ac5d4c3d03304f49bf",
-    "provider" : "local",
-    "name" : "Test User",
-    "email" : "test@test.com",
-    "role" : "guest",
-    "__v" : 0
+    _id      : '589bb5ac5d4c3d03304f49bf',
+    provider : 'local',
+    name     : 'Test User',
+    email    : 'test@test.com',
+    role     : 'guest',
+    __v      : 0
   }
 ];
 
@@ -26,13 +26,11 @@ function replaceAll(str, find, replace) {
 }
 
 //This would be performed on the server in a real app. Just stubbing in.
-const generateId = (user) => {
-  return replaceAll(user.title, ' ', '-');
-};
+const generateId = user => replaceAll(user.title, ' ', '-');
 
 class UsersApi {
   static getAllUsers() {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       setTimeout(() => {
         resolve(Object.assign([], users));
       }, delay);
@@ -44,11 +42,11 @@ class UsersApi {
       setTimeout(() => {
         // Simulate server-side validation
         const minUserTitleLength = 1;
-        if (user.title.length < minUserTitleLength) {
+        if(user.title.length < minUserTitleLength) {
           reject(`Title must be at least ${minUserTitleLength} characters.`);
         }
 
-        if (user.id) {
+        if(user.id) {
           const existingUserIndex = users.findIndex(a => a.id == user.id);
           users.splice(existingUserIndex, 1, user);
         } else {
@@ -66,7 +64,7 @@ class UsersApi {
   }
 
   static deleteUser(userId) {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       setTimeout(() => {
         const indexOfUserToDelete = users.findIndex(user => {
           user.userId == userId;
