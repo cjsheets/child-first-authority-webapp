@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const Sidebar = () =>
-    <div className="column col-sm-3 col-xs-1 sidebar-offcanvas" id="sidebar">
-      <ul className="nav" id="menu">
+    <div id="sidebar">
+      <ul className="sidebar-nav nav-pills nav-stacked" >
         <li><Link to="/dashboard" activeClassName="active">
           <i className="fa fa-dashboard" /> <span className="collapse in hidden-xs">Dashboard</span>
         </Link></li>
@@ -22,13 +22,6 @@ const Sidebar = () =>
         <li><Link to="/admin" activeClassName="active">
           <i className="fa fa-wrench" /> <span className="collapse in hidden-xs">Admin</span>
         </Link></li>
-        {/*<li> // Sample dropdown menu
-          <a href="#" data-target="#item1" data-toggle="collapse"><i className="fa fa-list" /> <span className="collapse in hidden-xs">Menu <span className="caret" /></span></a>
-          <ul className="nav nav-stacked collapse left-submenu" id="item1">
-            <li><a href="google.com">View One</a></li>
-            <li><a href="gmail.com">View Two</a></li>
-          </ul>
-        </li>*/}
       </ul>
     </div>
   /*<sidebar ><ul className="sidebar-nav nav-pills nav-stacked" >

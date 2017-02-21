@@ -1,19 +1,24 @@
 import React, {PropTypes} from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import muiTheme from '../styles/muiTheme.js';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
+
 
 class App extends React.Component {
   render() {
     return (
-      <div className="container-fluid wrapper">
-        <div className="row row-offcanvas row-offcanvas-left">
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <div className="wrapper">
           <Header/>
-          <Sidebar/>
-          <div className="column col-sm-9 col-xs-11" id="main">
-            {this.props.children}
-          </div>
+          <section className="main-body">
+            <Sidebar/>
+            <section id="main-view">
+              {this.props.children}
+            </section>
+          </section>
         </div>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }
