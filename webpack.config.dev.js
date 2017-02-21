@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import path from 'path';
 
 export default {
@@ -19,7 +20,11 @@ export default {
   },
   plugins : [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new ExtractTextPlugin({
+      filename : '[name].[contenthash].css',
+      disable  : process.env.NODE_ENV === 'development'
+    })
   ],
   module : {
     loaders : [
@@ -30,6 +35,9 @@ export default {
       }, {
         test    : /(\.css)$/,
         loaders : ['style-loader', 'css-loader']
+      }, {
+        test   : /\.scss$/,
+        loader : ['style-loader', 'css-loader', 'sass-loader']
       }, {
         test   : /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader : 'file-loader'

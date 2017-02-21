@@ -1,15 +1,27 @@
 import React, { PropTypes } from 'react';
-import { Link, IndexLink } from 'react-router';
+import { Link } from 'react-router';
 
 const Sidebar = () =>
     <div className="column col-sm-3 col-xs-1 sidebar-offcanvas" id="sidebar">
       <ul className="nav" id="menu">
-        <li><a href=""><i className="fa fa-dashboard" /> <span className="collapse in hidden-xs">Dashboard</span></a></li>
-        <li><a href=""><i className="fa fa-area-chart" /> <span className="collapse in hidden-xs">Data Visualization</span></a></li>
-        <li><a href=""><i className="fa fa-file" /> <span className="collapse in hidden-xs">Records</span></a></li>
-        <li><a href=""><i className="fa fa-graduation-cap" /> <span className="collapse in hidden-xs">School Reports</span></a></li>
-        <li><a href=""><i className="fa fa-cogs" /> <span className="collapse in hidden-xs">School Settings</span></a></li>
-        <li><a href=""><i className="fa fa-wrench" /> <span className="collapse in hidden-xs">Admin</span></a></li>
+        <li><Link to="/dashboard" activeClassName="active">
+          <i className="fa fa-dashboard" /> <span className="collapse in hidden-xs">Dashboard</span>
+        </Link></li>
+        <li><Link to="/visualization" activeClassName="active">
+          <i className="fa fa-area-chart" /> <span className="collapse in hidden-xs">Data Visualization</span>
+        </Link></li>
+        <li><Link to="/records" activeClassName="active">
+          <i className="fa fa-file" /> <span className="collapse in hidden-xs">Records</span>
+        </Link></li>
+        <li><Link to="/school/reports/at-risk" activeClassName="active">
+          <i className="fa fa-graduation-cap" /> <span className="collapse in hidden-xs">School Reports</span>
+        </Link></li>
+        <li><Link to="/school/settings" activeClassName="active">
+          <i className="fa fa-cogs" /> <span className="collapse in hidden-xs">School Settings</span>
+        </Link></li>
+        <li><Link to="/admin" activeClassName="active">
+          <i className="fa fa-wrench" /> <span className="collapse in hidden-xs">Admin</span>
+        </Link></li>
         {/*<li> // Sample dropdown menu
           <a href="#" data-target="#item1" data-toggle="collapse"><i className="fa fa-list" /> <span className="collapse in hidden-xs">Menu <span className="caret" /></span></a>
           <ul className="nav nav-stacked collapse left-submenu" id="item1">

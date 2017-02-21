@@ -4,12 +4,12 @@ import {connect} from 'react-redux';
 import * as userActions from '../../actions/userActions';
 
 class UsersPage extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-  }
+  // constructor(props, context) {
+  //   super(props, context);
+  // }
 
-  userRow(user, index){
-    return <div key={index}>{user.name}</div>
+  userRow(user, index) {
+    return <div key={index}>{user.name}</div>;
   }
 
   render() {
@@ -23,19 +23,19 @@ class UsersPage extends React.Component {
 }
 
 UsersPage.propTypes = { // Prop type validation
-  actions: PropTypes.object.isRequired,
-  users: PropTypes.array.isRequired
+  actions : PropTypes.object.isRequired,
+  users   : PropTypes.array.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
   return {
-    users: state.users
+    users : state.users
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(userActions, dispatch)
+    actions : bindActionCreators(userActions, dispatch)
   };
 }
 

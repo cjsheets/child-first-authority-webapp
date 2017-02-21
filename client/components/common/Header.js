@@ -1,36 +1,37 @@
 import React, { PropTypes } from 'react';
-import { Link, IndexLink } from 'react-router';
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import { Link } from 'react-router';
+import MediaQuery from 'react-responsive';
+import * as headerActions from '../../actions/headerActions';
 
-const Header = () =>
+class Header extends React.Component {
+  // constructor(props, context) {
+  //   super(props, context);
+  // }
+
+  toggleSidebar() {
+    this.props.actions.toggleSidebar();
+  }
+
+  render() {
+    return (
     <navbar>
-
-{/*<div className="debug-bar">
-    {'Debug: '}
-    <IndexLink to="/" activeClassName="active">Login</IndexLink>
-    {' | '}
-    <Link to="/dashboard" activeClassName="active">Dashboard</Link>
-    {' | '}
-    <Link to="/visualization" activeClassName="active">Visualization</Link>
-    {' | '}
-    <Link to="/records" activeClassName="active">Records</Link>
-    {' | '}
-    <Link to="/school/reports/at-risk" activeClassName="active">School Reports</Link>
-    {' | '}
-    <Link to="/school/settings" activeClassName="active">School Settings</Link>
-    {' | '}
-    <Link to="/admin" activeClassName="active">Admin</Link>
-    {' | '}
-    <Link to="/about" activeClassName="active">About</Link>
-</div>*/}
-
       <div className="cfa navbar navbar-default">
         <div className="navbar-header fixed-brand">
-          <a href="" className="pull-left"><i className="fa fa-navicon fa-2x" /></a>
-          <a className="navbar-brand" href="/dashboard">Child First Authority</a>
-          <button className="navbar-toggle" type="button" >
-            <span className="sr-only">Toggle user menu</span>
-            <i className="fa fa-user fa-lg" />
-          </button>
+          <MediaQuery minWidth={768}>
+            <a href="#" className="pull-left" onClick={this.toggleSidebar}>
+              <i className="fa fa-navicon fa-2x" /> big
+            </a>
+          </MediaQuery>
+          <MediaQuery maxWidth={768}>
+            <a href="#" className="pull-left" onClick={this.toggleSidebar}>
+              <i className="fa fa-navicon fa-2x" /> small
+            </a>
+          </MediaQuery>
+          <Link to="/dashboard" className="navbar-brand">
+            Child First Authority
+          </Link>
         </div>
         <div className="navbar-collapse collapse" id="navbar-main" aria-expanded="false" aria-hidden="true">
           <ul className="nav navbar-nav navbar-right">
@@ -39,7 +40,26 @@ const Header = () =>
           </ul>
         </div>
       </div>
-    </navbar>;
+    </navbar>
+    );
+  }
+}
 
+Header.propTypes = { // Prop type validation
+  actions : PropTypes.object.isRequired,
+  header  : PropTypes.array.isRequired
+};
 
-export default Header;
+function mapStateToProps(state) {
+  return {
+    header : state.header
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions : bindActionCreators(headerActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
