@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-        <div className="wrapper">
+        <div className="viewport">
           <Header/>
           <section className="main-body">
             <Sidebar/>

@@ -1,7 +1,7 @@
 #sidebar {
   display: flex;
   flex-direction: column;
-  @media(max-width: 1200px) {
+  @media(max-width: $small) {
     position: absolute;
     top: $cfa-unit;
     bottom: 0;
@@ -63,7 +63,7 @@
     }
   }
   transition: all 0.5s ease;
-  @media(max-width: 1200px) {
+  @media(max-width: $small) {
     width: 0;
   }
   @include cfa-scrollbar(1px, 0, $teal, $teal-d05);
@@ -74,7 +74,7 @@
 }
 
 @media print {
-  sidebar {
+  #sidebar {
     display: none !important;
   }
 }
