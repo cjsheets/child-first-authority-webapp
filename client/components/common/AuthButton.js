@@ -1,7 +1,4 @@
-import React, { PropTypes, Component } from 'react';
-import { bindActionCreators } from 'redux';
-import {connect} from 'react-redux';
-import * as headerActions from '../../actions/headerActions';
+import React, { Component } from 'react';
 
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';

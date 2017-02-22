@@ -1,9 +1,14 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import {connect} from 'react-redux';
 
-const Sidebar = () =>
+class Sidebar extends Component {
+
+  render() {
+    return (
     <div id="sidebar">
-      <ul className="sidebar-nav nav-pills nav-stacked expanded" >
+      {/*this.props.view.sidebar.expand*/}
+      <ul className={`sidebar-nav nav-pills nav-stacked ${false ? 'expanded' : ''}`}>
         <li><Link to="/dashboard" activeClassName="active">
           <span className="fa-stack fa-lg pull-left"><i className="fa fa-stack-1x fa-dashboard" /></span>
           <span className="collapse in hidden-xs">Dashboard</span>
@@ -35,6 +40,15 @@ const Sidebar = () =>
     </Link></li>
       </ul>
     </div>
-  ;
+    );
+  }
+}
 
-export default Sidebar;
+function mapStateToProps(state) {
+  return {
+    view : state.view
+  };
+}
+
+
+export default connect(mapStateToProps)(Sidebar);

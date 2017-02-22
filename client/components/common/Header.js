@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
-import * as headerActions from '../../actions/headerActions';
+import * as viewActions from '../../actions/viewActions';
 
 import MediaQuery from 'react-responsive';
 
@@ -12,12 +12,12 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
 class Header extends Component {
 
-  handleMenuClick() {
-    alert('onTouchTap triggered on the title component');
+  handleExpandSidebar() {
+    this.props.actions.setExpandSidebar();
   }
 
-  handleMenuClick2() {
-    alert('other menu');
+  handlePopoverSidebar() {
+    this.props.actions.setPopoverSidebar();
   }
 
 
@@ -31,7 +31,7 @@ class Header extends Component {
           <div>
             <MediaQuery minWidth={768}>
               <IconButton
-                onClick={this.handleMenuClick2}
+                onClick={this.handleExpandSidebar}
                 iconStyle={{color: '#EFEFEF'}}
               >
                 <NavigationMenu />
@@ -39,7 +39,7 @@ class Header extends Component {
             </MediaQuery>
             <MediaQuery maxWidth={768}>
               <IconButton
-                onClick={this.handleMenuClick}
+                onClick={this.handlePopoverSidebar}
                 iconStyle={{color: '#EFEFEF'}}
               >
                 <NavigationMenu />
@@ -54,18 +54,18 @@ class Header extends Component {
 
 Header.propTypes = { // Prop type validation
   actions : PropTypes.object.isRequired,
-  header  : PropTypes.array.isRequired
+  view    : PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    header : state.header
+    view : state.view
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions : bindActionCreators(headerActions, dispatch)
+    actions : bindActionCreators(viewActions, dispatch)
   };
 }
 
