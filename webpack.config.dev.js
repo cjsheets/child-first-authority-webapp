@@ -31,7 +31,10 @@ export default {
       {
         test    : /\.js$/,
         include : path.join(__dirname, 'client'),
-        loaders : ['babel-loader']
+        loader  : 'babel-loader',
+        query   : {
+          presets : ['es2015', 'react', 'stage-2']
+        }
       }, {
         test    : /(\.css)$/,
         loaders : ['style-loader', 'css-loader']
