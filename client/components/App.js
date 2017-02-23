@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from '../styles/muiTheme.js';
 import Header from './common/Header';
 import Sidebar from './common/Sidebar';
+import Footer from './common/Footer';
 
 
 class App extends React.Component {
@@ -14,7 +15,10 @@ class App extends React.Component {
           <section className="main-body">
             <Sidebar/>
             <section id="main-view">
-              {this.props.children}
+              <div id="main-content">
+                {this.props.children}
+              </div>
+              <Footer />
             </section>
           </section>
         </div>
