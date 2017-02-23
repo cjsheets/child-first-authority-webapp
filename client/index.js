@@ -16,6 +16,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 const store = configureStore();
+console.log(store.getState());
+
 // Future improvement, inject into Head on serve during initial render
 store.dispatch(loadUsers());
 

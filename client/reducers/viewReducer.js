@@ -1,21 +1,20 @@
 import * as types from '../actions/actionTypes';
 import iState from './initialState';
 
-export default function viewReducer(state = iState, action) {
+export default function viewReducer(state = iState.view, action) {
   switch (action.type) {
   case types.TOGGLE_EXPAND_SIDEBAR:
-    return { view : {
+    return {
       sidebar : {
-        expand  : true,
+        expand  : action.open,
         popover : true
       }
-    }
     };
   case types.TOGGLE_POPOVER_SIDEBAR:
     return { view : {
       sidebar : {
         expand  : true,
-        popover : true
+        popover : action.open
       }
     }
     };

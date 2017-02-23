@@ -11,13 +11,19 @@ import IconButton from 'material-ui/IconButton';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
 class Header extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.handleExpandSidebar = this.handleExpandSidebar.bind(this);
+    this.handlePopoverSidebar = this.handlePopoverSidebar.bind(this);
+  }
 
   handleExpandSidebar() {
-    this.props.actions.setExpandSidebar();
+    this.props.actions.setExpandSidebar(!this.props.view.sidebar.expand);
   }
 
   handlePopoverSidebar() {
-    this.props.actions.setPopoverSidebar();
+    this.props.actions.setPopoverSidebar(!this.props.view.sidebar.expand);
   }
 
 
