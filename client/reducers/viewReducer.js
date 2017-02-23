@@ -6,17 +6,8 @@ export default function viewReducer(state = iState.view, action) {
   case types.TOGGLE_EXPAND_SIDEBAR:
     return {
       sidebar : {
-        expand  : action.open,
-        popover : true
+        expand : action.open,
       }
-    };
-  case types.TOGGLE_POPOVER_SIDEBAR:
-    return { view : {
-      sidebar : {
-        expand  : true,
-        popover : action.open
-      }
-    }
     };
   default:
     return state;

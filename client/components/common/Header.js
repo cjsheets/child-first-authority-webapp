@@ -3,8 +3,6 @@ import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import * as viewActions from '../../actions/viewActions';
 
-import MediaQuery from 'react-responsive';
-
 import AppBar from 'material-ui/AppBar';
 import AuthButton from './AuthButton';
 import IconButton from 'material-ui/IconButton';
@@ -15,17 +13,11 @@ class Header extends Component {
     super(props, context);
 
     this.handleExpandSidebar = this.handleExpandSidebar.bind(this);
-    this.handlePopoverSidebar = this.handlePopoverSidebar.bind(this);
   }
 
   handleExpandSidebar() {
     this.props.actions.setExpandSidebar(!this.props.view.sidebar.expand);
   }
-
-  handlePopoverSidebar() {
-    this.props.actions.setPopoverSidebar(!this.props.view.sidebar.expand);
-  }
-
 
   render() {
     return (
@@ -34,24 +26,12 @@ class Header extends Component {
         title={<span style={{fontWeight: 400, fontSize: 20}}>Child First Authority</span>}
         iconElementRight={<AuthButton />}
         iconElementLeft={
-          <div>
-            <MediaQuery minWidth={768}>
-              <IconButton
-                onClick={this.handleExpandSidebar}
-                iconStyle={{color: '#EFEFEF'}}
-              >
-                <NavigationMenu />
-              </IconButton>
-            </MediaQuery>
-            <MediaQuery maxWidth={768}>
-              <IconButton
-                onClick={this.handlePopoverSidebar}
-                iconStyle={{color: '#EFEFEF'}}
-              >
-                <NavigationMenu />
-              </IconButton>
-            </MediaQuery>
-          </div>
+          <IconButton
+            onClick={this.handleExpandSidebar}
+            iconStyle={{color: '#EFEFEF'}}
+          >
+            <NavigationMenu />
+          </IconButton>
         }
       />
     );
