@@ -75,5 +75,5 @@ class AdminPage extends React.Component {
     );
   }
 }
-// { getWidth: element => ( element.offsetWidth ), getHeight: element => ( element.offsetHeight ) }
-module.exports = Dimensions()(AdminPage);
+//https://github.com/digidem/react-dimensions/issues/44
+module.exports = Dimensions({elementResize: true})(AdminPage);
